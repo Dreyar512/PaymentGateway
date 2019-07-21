@@ -246,8 +246,6 @@ ServiceFabricBackup/
 *.rptproj.bak
 
 # SQL Server files
-*.mdf
-*.ldf
 *.ndf
 
 # Business Intelligence projects
@@ -338,3 +336,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/PaymentGateway/wwwroot/AppData/PaymentDB.ldf
+/PaymentGateway/wwwroot/AppData/PaymentDB.mdf
