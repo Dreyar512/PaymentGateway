@@ -7,12 +7,12 @@ namespace PaymentGateway.Models
 {
     public class MerchantBank
     {
-        public string cardNumber { get; set; }
-        public string date { get; set; }
-        public int amount { get; set; }
-        public string currency { get; set; }
-        public int cvv { get; set; }
-        public string reference { get; set; }
-        public string status { get; set; }
+        public string CardNumber { get; set; }
+        public string Date { get; set; }
+        public int Amount { get; set; }
+        public string Currency { get; set; }
+        public int Cvv { get; set; }
+        public string Reference { get; set; }
+        public string Status { get; set; }
     }
 }

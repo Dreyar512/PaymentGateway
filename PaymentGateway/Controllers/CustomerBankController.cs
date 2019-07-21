@@ -14,8 +14,11 @@ namespace PaymentGateway.Controllers
 
     {
         ///mocking the bank variables
-            int amount = 500;
-            string cardNumber = "5555555555554444";
+        int Amount = 500;
+        string CardNumber = "5555555555554444";
+
+        //Retrieve payment details from payment gateway
+        //withdraw money 
 
         [HttpPost]
         public IActionResult PaymentDetails([FromBody] CustomerBank paymentDetails)
@@ -23,16 +26,18 @@ namespace PaymentGateway.Controllers
             Guid guid = Guid.NewGuid();
             string reference = guid.ToString();
 
-            if (paymentDetails.cardNumber.Equals(cardNumber) && (paymentDetails.amount >= amount))
+            if (paymentDetails.CardNumber.Equals(CardNumber) && (paymentDetails.Amount >= Amount))
             {
+                //generate a reference
                 reference = guid.ToString();
-                paymentDetails.reference = reference;
-                paymentDetails.status = "successful";
+
+                paymentDetails.Reference = reference;
+                paymentDetails.Status = "successful";
                 return Ok(paymentDetails);
             }
 
             else
-                paymentDetails.status = "unsuccessful";
+                paymentDetails.Status = "unsuccessful";
                 return BadRequest(paymentDetails);
         }
 

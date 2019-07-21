@@ -12,22 +12,24 @@ namespace PaymentGateway.Controllers
 
     public class MerchantBankController : ControllerBase
     {
+        //Retrieve payment details from payment gateway
+        //Deposit money withdraw from customer bank in merchant bank
         [HttpPost]
         public IActionResult PaymentDetails([FromBody] MerchantBank paymentDetails)
         {
             //mocking merchant bank
             //deposit amount 
 
-            int? amount = paymentDetails.amount;
+            int? amount = paymentDetails.Amount;
 
             if(amount != null)
             {
-                paymentDetails.status = "successful";
+                paymentDetails.Status = "successful";
                 return Ok(paymentDetails);
             }
             else
             {
-                paymentDetails.status = "unsuccessful";
+                paymentDetails.Status = "unsuccessful";
                 return BadRequest(paymentDetails);
             }
         }
