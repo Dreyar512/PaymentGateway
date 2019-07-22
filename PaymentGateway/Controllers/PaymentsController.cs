@@ -52,7 +52,7 @@ namespace PaymentGateway.Controllers
                     if (merchantpaymentdetails.Status.Equals("successful"))
                     {
                         DatabaseConnection(merchantpaymentdetails);
-                        return Ok("Payment successful");
+                        return Ok("Payment successful && reference = " + merchantpaymentdetails.Reference);
                     }
                     else
                     {
